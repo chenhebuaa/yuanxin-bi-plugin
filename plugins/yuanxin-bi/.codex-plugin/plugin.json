@@ -1,0 +1,19 @@
+{
+  "name": "yuanxin-bi",
+  "version": "0.1.0",
+  "description": "通过飞书登录查询品牌调研数据并进行横向对比",
+  "author": {
+    "name": "原心"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "原心 BI",
+    "shortDescription": "品牌调研查询与横向对比",
+    "longDescription": "通过公司 BI 服务读取已发布问卷数据，保留日期、调研份数与来源。",
+    "developerName": "原心",
+    "category": "Productivity",
+    "capabilities": [],
+    "defaultPrompt": "查询蔡大胖炸洋芋与北京-福万越南餐厅的调研数据，并比较性别比例。"
+  },
+  "mcpServers": "./.mcp.json"
+}

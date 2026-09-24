@@ -1,0 +1,20 @@
+{
+  "name": "yuanxin-bi",
+  "interface": {
+    "displayName": "Yuanxin Bi"
+  },
+  "plugins": [
+    {
+      "name": "yuanxin-bi",
+      "source": {
+        "source": "local",
+        "path": "./plugins/yuanxin-bi"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

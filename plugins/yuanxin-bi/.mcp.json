@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "yuanxin-bi": {
+      "url": "https://bi.yuanxininsight.com/mcp",
+      "type": "http"
+    }
+  }
+}

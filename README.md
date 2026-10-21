@@ -18,7 +18,7 @@
 在已安装 Codex CLI 的终端执行：
 
 ```sh
-codex plugin marketplace add chenhebuaa/yuanxin-bi-plugin --ref v0.2.0
+codex plugin marketplace add chenhebuaa/yuanxin-bi-plugin --ref v0.2.1
 codex plugin add yuanxin-bi@yuanxin-bi
 codex mcp login yuanxin-bi --scopes bi:read --oauth-client-registration dcr
 ```
@@ -41,11 +41,11 @@ codex mcp login yuanxin-bi --scopes bi:read --oauth-client-registration dcr
 
 安装包公开，数据访问仅向获准的公司成员开放。每次请求由服务器校验飞书租户、有效会话和白名单；安装插件不自动获得数据权限。管理员和已加入白名单的同事可以访问；新同事还需在飞书应用可用范围内。
 
-访问令牌有效期 1 小时，过期后按提示重新登录；当前不提供自动续期。服务地址为 `https://bi.yuanxininsight.com/mcp`。本仓库仅分发插件，不包含问卷原文件、查询结果、服务端代码、飞书密钥或令牌。查询返回的数据会进入使用者的 Codex 会话。
+访问令牌有效期 1 小时，客户端使用刷新令牌自动续期；每次刷新轮换令牌，同一次登录最长维持 30 天（从登录起计算，不滚动延长）。服务升级前的登录需重新授权一次。会话到期、管理员撤销或停用账号后需按提示重新登录；停用用户无法继续访问。服务地址为 `https://bi.yuanxininsight.com/mcp`。本仓库仅分发插件，不包含问卷原文件、查询结果、服务端代码、飞书密钥或令牌。查询返回的数据会进入使用者的 Codex 会话。
 
 ## 更新与版本
 
-当前说明版本为 `v0.2.0`，更新问卷口径、缺失处理、多来源和比较限制指引；四个工具名称与原调用参数保持兼容。固定标签用于可重复安装，已发布的标签不移动；固定旧标签的安装不会自动切到新标签。服务端会直接执行新的比较约束，使用新版解释指引需更新插件并新建任务加载。
+当前说明版本为 `v0.2.1`，补充自动续期、30 天会话期限和撤销说明；保留问卷口径、缺失处理、多来源和比较限制指引；四个工具名称与原调用参数保持兼容。固定标签用于可重复安装，已发布的标签不移动；固定旧标签的安装不会自动切到新标签。服务端会直接执行新的比较约束，使用新版解释指引需更新插件并新建任务加载。
 
 本机若已安装早期 `yuanxin-bi@personal`，先移除该本地插件，再从此 GitHub 市场安装，避免出现两个同名 MCP 服务：
 

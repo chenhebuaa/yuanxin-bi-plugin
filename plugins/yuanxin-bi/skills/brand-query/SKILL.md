@@ -32,3 +32,7 @@ description: 使用原心 BI 查询品牌定量问卷、人工品类、窄门标
 - mapping_version 标记口径版本。历史缺少题意、对象或分母证据时，保留原值但仅供参考。不同时间档不能估算拆分，半个月不能严格替代14天。
 - 多来源比较分别使用 left.source/right.source 及每项 source_sheet/source_cell/raw_answer_range；get_data_status.sources 列出组合发布的各来源。顶层 source_file 为 null 时不是来源丢失，不能沿用另一品牌的文件。
 - survey_period_reported 是来源声明范围；submission_range_raw 仍需结合 time_note 解读。时区未核实不擅自转换或据此声称精确调研日期。
+
+## 登录与续期
+
+访问令牌有效 1 小时，客户端可用刷新令牌自动续期，每次刷新都会轮换。同一次登录最长 30 天，从登录时计算；到期、管理员撤销或账号停用后不能继续刷新。升级前的旧登录需正常重新授权一次。提示需要授权时引导用户完成飞书登录，不索取或展示令牌，不绕过白名单。

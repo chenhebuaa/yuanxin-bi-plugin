@@ -18,7 +18,7 @@
 在已安装 Codex CLI 的终端执行：
 
 ```sh
-codex plugin marketplace add chenhebuaa/yuanxin-bi-plugin --ref v0.1.1
+codex plugin marketplace add chenhebuaa/yuanxin-bi-plugin --ref v0.2.0
 codex plugin add yuanxin-bi@yuanxin-bi
 codex mcp login yuanxin-bi --scopes bi:read --oauth-client-registration dcr
 ```
@@ -28,12 +28,14 @@ codex mcp login yuanxin-bi --scopes bi:read --oauth-client-registration dcr
 ### 示例
 
 - 查询某个品牌的调研份数、性别比例，并注明调研日期和来源。
-- 对比两个品牌的复购和渠道指标，并列出差异。
+- 对比两个品牌的近期到访、到店信息来源和消费场景，说明分母及哪些指标可比。
 - 列出一个品牌的所有调研批次，让我选择。
 - 查询某品牌的人工品类、窄门标签及匹配状态。
 - 列出已标注为“休闲简餐”的品牌，保留地区和调研批次。
 
 同名品牌存在多个批次时需先选择。比例差值使用百分点；不同日期的横向比较不代表时间趋势。缺失及异常原值不按零处理。
+
+近期到访老客占比不是队列复购率；区分全部受访样本和老客分母。渠道中的混合选项、外卖经历和未归属项单列，消费场景展示有效回答及漏答。历史口径未知时保留原值，仅并列参考，不自动算差值。多来源的来源信息以双方各自返回的记录为准。
 
 ## 准入与隐私
 
@@ -43,7 +45,7 @@ codex mcp login yuanxin-bi --scopes bi:read --oauth-client-registration dcr
 
 ## 更新与版本
 
-当前说明版本为 `v0.1.1`，固定标签用于可重复安装，已发布的标签不移动。新版本发布时提供对应安装命令与变更说明；固定旧标签的安装不会自动切到新标签。
+当前说明版本为 `v0.2.0`，更新问卷口径、缺失处理、多来源和比较限制指引；四个工具名称与原调用参数保持兼容。固定标签用于可重复安装，已发布的标签不移动；固定旧标签的安装不会自动切到新标签。服务端会直接执行新的比较约束，使用新版解释指引需更新插件并新建任务加载。
 
 本机若已安装早期 `yuanxin-bi@personal`，先移除该本地插件，再从此 GitHub 市场安装，避免出现两个同名 MCP 服务：
 

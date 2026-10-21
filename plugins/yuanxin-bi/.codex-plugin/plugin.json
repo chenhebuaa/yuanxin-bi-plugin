@@ -1,6 +1,6 @@
 {
   "name": "yuanxin-bi",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "通过飞书登录查询品牌调研、人工品类与窄门标签，进行品牌横向对比",
   "author": {
     "name": "原心"
